@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konten Singkat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: rgb(213, 211, 211);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: transparent;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-weight: 600;
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+
+        .navbar .menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .navbar .menu a:hover {
+            color: silver;
+        }
+
+        #tombol-menu {
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Main content */
+        main {
+            background: url(gambar/profile\ 2.jpg) no-repeat center center/cover;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 40px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px; 
+            padding-bottom: 100px;
+            margin-top: 20px;
+        }
+
+        .card {
+            max-width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px; 
+        }
+
+        .card:hover {
+            transform: translateY(-10px); 
+        }
+
+        .card .img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card .top-text {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card .bottom-text {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card .btn {
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: black;
+            padding: 60px 20px;
+            width: 100%;
+            margin-top: auto; 
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-content {
+            flex-basis: calc(50% - 40px);
+            margin-bottom: 20px;
+        }
+
+        .footer-content h4 {
+            color: orange;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-content p {
+            margin: 15px 0;
+            color: black;
+            line-height: 1.5;
+            max-width: 300px;
+        }
+
+        .links {
+            list-style-type: none;
+        }
+
+        .links li {
+            margin-bottom: 10px;
+        }
+
+        .links li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .links li a:hover {
+            color: orange; 
+        }
+
+        .footer-content p {
+            margin: 15px 0;
+            color: black;
+            line-height: 1.5;
+            max-width: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .card {
+                max-width: 100%;
+                margin: 20px 0;
+            }
+
+            .footer-content {
+                flex-basis: 100%; 
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            #tombol-menu {
+                display: block;
+            }
+
+            .navbar .menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 250px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 70px 40px 0;
+                transition: left 0.3s ease;
+                z-index: 20;
+            }
+
+            .navbar .menu.active {
+                left: 0;
+            }
+
+            .navbar .menu li {
+                margin: 15px 0;
+            }
+
+            .navbar .menu a {
+                color: black;
+            }
+
+            .navbar .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="#">LANDSCAPE</a>
+            <ul class="menu">
+                <li><a href="display_home.html">Home</a></li>
+                <li><a href="display_about.html">About</a></li>
+            </ul>
+            <span id="tombol-menu" class="material-symbols-outlined">menu</span>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="container">
+            <!-- First Card -->
+            <article class="card">
+                <div class="img">
+                    <img src="gambar/foto simple.jpg" alt="Gambar Makanan khas Magetan">
+                </div>
+                <div class="top-text">
+                    <h2 class="name">Makanan khas Magetan</h2>
+                    <p>Rica-rica Magetan</p>
+                </div>
+                <div class="bottom-text">
+                    <p>
+                        Rica-rica bekicot merupakan salah satu hidangan khas dari daerah Minahasa, Sulawesi Utara. Makanan ini sangat populer di Jawa Timur, terutama Magetan.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="read-more-btn" data-url="https://dapurbunda.id/resep-rica-rica-bekicot/">Read more</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Second Card -->
+            <article class="card">
+                <div class="img">
+                    <img src="gambar/profile.jpeg" alt="Gambar Telaga Sarangan">
+                </div>
+                <div class="top-text">
+                    <h2 class="name">Tempat wisata</h2>
+                    <p>Telaga Sarangan</p>
+                </div>
+                <div class="bottom-text">
+                    <p>
+                        Telaga Sarangan, juga dikenal sebagai Telaga Pasir, adalah telaga alami yang berada di ketinggian 1.200 meter di atas permukaan laut dan terletak di lereng Gunung Lawu, Kecamatan Plaosan, Magetan.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="read-more-btn" data-url="https://id.wikipedia.org/wiki/Telaga_Sarangan">Read more</a>
+                    </div>
+                </div>
+            </article>
+
+              <!-- third Card -->
+              <article class="card">
+                <div class="img">
+                    <img src="gambar/foto simple 2.jpg" alt="Gambar Telaga Sarangan">
+                </div>
+                <div class="top-text">
+                    <h2 class="name">Minuman khas</h2>
+                    <p>Wedang Cemue</p>
+                </div>
+                <div class="bottom-text">
+                    <p>
+                        Makan-makan sudah, saatnya menutupnya dengan minuman segar yaitu wedang cemue. Satu porsi wedang cemue yang disajikan di dalam mangkok kecil berisi potongan roti tawar, kacang tanah, dan irisan bawang merah goreng.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="read-more-btn" data-url="https://www.contohweb3.com">Read more</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main> 
+
+      
+    <!-- Footer -->
+    <footer>
+        <div class="footer-row">
+            <div class="footer-content">
+                <h4>Tentang Kami</h4>
+                <ul class="links">
+                    <li><a href="#">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h4>Newsletter</h4>
+                <p>Terimakasih telah mengunjungi website kami, semoga harimu menyenangkan selalu.</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px;">&copy; 2024 LANDSCAPE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript untuk menangani tombol "Read more"
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Mencegah link default dari reload halaman
+                const targetUrl = this.getAttribute('data-url');
+                window.open(targetUrl, '_blank'); // Membuka URL dalam tab baru
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('tombol-menu');
+        const menu = document.querySelector('.navbar .menu');
+        
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Magetan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzG0sAKbMhjpk1gW0zkOCeEjOiaJtLbqV5pxLinc7goyOxjrLUtCw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            flex: 1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: transparent;
+            z-index: 10;
+        }
+
+        header .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-weight: 600;
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+
+        .navbar .menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar .menu li {
+            list-style: none;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            transition: 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .navbar .menu a:hover {
+            color: silver;
+        }
+
+        #tombol-menu {
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-top: 80px;
+            background: url(gambar/profile\ 2.jpg) no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        main h1 {
+            color: white;
+            text-align: left;
+        }
+
+        main article {
+            color: white;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        main p {
+            color: white;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        main button {
+            background: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 1rem;
+            border-radius: 6px;
+            margin-top: 38px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+
+        main button:hover {
+            color: white;
+            background: silver;
+        }
+        
+        aside {
+            margin-top: 20px;
+            margin-bottom: 40px; 
+            background-color: white;
+            border-radius: 2%;
+            max-width: 300px; 
+            display: inline-block;
+            padding: 10px;
+            clear: both; 
+        }
+
+        /* Gambar di dalam aside */
+        aside img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            clear: both;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: black;
+            padding: 50px 20px;
+            width: 100%;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-content {
+            flex-basis: calc(50% - 40px);
+            margin-bottom: 20px;
+        }
+
+        .footer-content h4 {
+            color: orange;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .links {
+            list-style-type: none;
+        }
+
+        .links li {
+            margin-bottom: 10px;
+        }
+
+        .links li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .links li a:hover {
+            color: black;
+        }
+
+        .footer-content p {
+            margin: 20px 0;
+            color: black;
+            line-height: 1.5;
+            max-width: 300px;
+        }
+
+        .icon {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .icon a {
+            color: black;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .icon a:hover {
+            color: orange;
+        }
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+                margin-bottom: 40px; 
+            }
+
+            main h1, main article {
+                text-align: center; 
+            }
+
+            aside {
+                max-width: 100%; 
+                margin-bottom: 40px; 
+            }
+
+            footer {
+                padding-bottom: 60px; 
+            }
+
+            .footer-row {
+                flex-direction: column; 
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+                text-align: center; 
+            }
+        }
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="#">LANDSCAPE</a>
+            <ul class="menu">
+                <li><a href="display_home.html">Home</a></li>
+            </ul>
+            <span id="tombol-menu" class="material-symbols-outlined">menu</span>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Mari kita bahas tentang Magetan</h1>
+        <article>
+            Kabupaten Magetan, bahasa Jawa: Hanacaraka: ꦩꦒꦼꦠꦤ꧀ Pegon: ماڮۤتان, translit. Magetan; pengucapan bahasa Jawa: Magetan adalah sebuah wilayah kabupaten yang terletak di Provinsi Jawa Timur, Indonesia. Ibu kota dari kabupaten ini berada di Kecamatan Magetan. Kabupaten ini berbatasan langsung dengan Kabupaten Ngawi di sebelah utara, Kabupaten Madiun di sebelah timur, Kabupaten Ponorogo di sebelah selatan, serta Kabupaten Karanganyar dan Kabupaten Wonogiri (keduanya termasuk wilayah Provinsi Jawa Tengah) di sebelah barat. Pangkalan Udara Iswahjudi, salah satu pangkalan utama TNI-AU di Provinsi Jawa Timur, terletak di Kecamatan Maospati. Pada tahun 2022, jumlah penduduk Kabupaten Magetan sebanyak 678.343 jiwa.
+        </article> 
+        <p>Sumber: <a href="https://id.wikipedia.org/wiki/Kabupaten_Magetan" target="_blank">Kabupaten Magetan</a></p>
+
+        <button id="jelajahi-btn">Jelajahi</button>
+
+        <aside>
+            <img src="gambar/profile 3.jpg" alt="Pemandangan Magetan">
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-row">
+            <div class="footer-content">
+                <h4>Tentang Kami</h4>
+                <ul class="links">
+                    <li><a href="#">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h4>Newsletter</h4>
+                <p>Terimakasih telah mengunjungi website kami, semoga harimu menyenangkan selalu</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px;">&copy; 2024 LANDSCAPE. All rights reserved.</p>
+    </footer>
+    
+    <script src="about.js"></script>
+    <script src="button_about.js"></script>
+</body>
+</html>
